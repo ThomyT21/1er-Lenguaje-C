@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1568580980 source:d:\a-utn\tsp038-programacion i-laboratorio i\clases\clase 8\validarsolonumeros\validarnumeros\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+

@@ -1,0 +1,38 @@
+# depslib dependency file v1.0
+1567779386 source:d:\a-utn\tsp038-programacion i-laboratorio i\clases\clase 7\matrizyparalelo\matrizparalelo\utn_array.c
+	<stdio.h>
+	<stdlib.h>
+	"UTN_Inputs.h"
+
+1568575022 d:\a-utn\tsp038-programacion i-laboratorio i\clases\clase 7\matrizyparalelo\matrizparalelo\utn_inputs.h
+
+1568577947 source:d:\a-utn\tsp038-programacion i-laboratorio i\clases\clase 7\matrizyparalelo\matrizparalelo\utn_inputs.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1568579109 source:d:\a-utn\tsp038-programacion i-laboratorio i\clases\clase 7\matrizyparalelo\matrizparalelo\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"UTN_Array.h"
+	"UTN_Inputs.h"
+
+1567778986 d:\a-utn\tsp038-programacion i-laboratorio i\clases\clase 7\matrizyparalelo\matrizparalelo\utn_array.h
+
+1568579110 source:c:\users\alumno\desktop\matrizparalelo\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"UTN_Array.h"
+	"UTN_Inputs.h"
+
+1567778986 c:\users\alumno\desktop\matrizparalelo\utn_array.h
+
+1568575024 c:\users\alumno\desktop\matrizparalelo\utn_inputs.h
+
+1567779386 source:c:\users\alumno\desktop\matrizparalelo\utn_array.c
+	<stdio.h>
+	<stdlib.h>
+	"UTN_Inputs.h"
+
