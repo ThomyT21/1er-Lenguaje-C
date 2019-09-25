@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
-#define TAM 1
+#define TAM 2
 #include <string.h>                 // AÑADE LA BIBLIOTECA DE STRINGS
+#include "Operaciones.h"
 
 typedef struct                      //ESTRUCTURAS
 {
@@ -17,25 +18,25 @@ typedef struct                      //ESTRUCTURAS
 
 int aLTA(eEmployee vec[], int size);    //PROTOTIPO DE UNA FUNCION. FUNCION ALTA 1)
 int iNicializar(eEmployee vec[], int size);
-int mOSTRAR1Empleado(eEmployee empleado);
+int mostrar_1_Empleado(eEmployee empleado);
 int mostrar_Todos_Los_Empleados(eEmployee vec[], int size);
-
-
+int bAJA(eEmployee vec[], int size);
+int buscar_Por_Id(eEmployee vec[], int size, int id);
 
 
 int main()
 {
-    eEmployee EmployeeLista[TAM];
+    eEmployee EmployeeLista[TAM] = {{001, "hernan", "gonzalez", 1000,2,4}, {002, "juan", "sosa", 10000, 1, 3}};
     char opcion;
 
-iNicializar(EmployeeLista, TAM);           //LLAMAR A LA FUNCION
+// iNicializar(EmployeeLista, TAM);           //LLAMAR A LA FUNCION
         do
     {
         printf("Elija la operacion deseada: \n");
-        printf("a) Calcular la suma (A+B)\n");
-        printf("b) Calcular la resta (A-B)\n");
-        printf("c) Calcular la division (A/B)\n");
-        printf("d) Calcular la multiplicacion (A*B)\n");
+        printf("a) Mostrar datos de los empleados ingresados\n");
+        printf("b) Ingrese datos de los empleados\n");
+        printf("c) Dar de baja a un empleado\n");
+        printf("d) Informar empleados ordenados alfabeticamente por apellido y sector\n");
         printf("e) Calcular el factorial (A!)\n");
         printf("s) SALIR \n");
         fflush(stdin);
@@ -53,8 +54,9 @@ iNicializar(EmployeeLista, TAM);           //LLAMAR A LA FUNCION
 
         case 'b' : aLTA(EmployeeLista, TAM);
 
+
             break;
-        case 'c' :
+        case 'c' : bAJA(EmployeeLista, TAM);
 
             break;
 
@@ -132,14 +134,15 @@ int iNicializar(eEmployee vec[], int size)
             vec[i].estado = 0;
             vec[i].sector = 0;
 
-            strcpy(vec[i].nombre, "");          //INICIALIZA LA VARIABLE DE TIPO STRING
+            strcpy(vec[i].nombre, "");
             strcpy(vec[i].apellido, "");
         }
 
         return 0;
 }
-int mOSTRAR1Empleado(eEmployee empleado)
+int mostrar_1_Empleado(eEmployee empleado)
 {
+    if(empleado.estado != 0)
     printf("La id: %d nombre: %s Apellido: %s: salario: %.2f estado: %d sector: %d\n", empleado.id, empleado.nombre, empleado.apellido, empleado.salario, empleado.estado, empleado.sector);
     return 0;
 }
@@ -152,10 +155,72 @@ int mostrar_Todos_Los_Empleados(eEmployee vec[], int size)
     for(i=0; i < size; i++)
 
         {
-            mOSTRAR1Empleado(vec[i]);
+            mostrar_1_Empleado(vec[i]);
 
         }
 
     return 0;
+
+}
+int bAJA(eEmployee vec[], int size)
+{
+
+    int id;
+    int direccion;
+    mostrar_Todos_Los_Empleados(vec, size);
+    printf("Ingrese la id del empleado a dar de baja\n");
+    fflush(stdin);
+    scanf("%d",&id);
+    direccion = buscar_Por_Id(vec,size, id);        // CARGAR UNA VARIABLE
+
+        if(direccion != -1)
+            {
+                vec[direccion].estado = 0;
+            }
+        else
+            {
+                printf("id no encontrada\n");
+            }
+
+
+
+
+
+    return 0;
+
+
+}
+int buscar_Por_Id(eEmployee vec[], int size, int id)
+{
+    int i;
+    int aux = -1;
+    for(i=0; i < size; i++)
+        {
+            if(vec[i].id == id)
+            aux = i;
+            break;          // BREAK SE USA PARA CORTAR FOR, SWITCH Y TODO LO QUE SEA IGUAL
+        }
+    return aux;
+
+}
+
+int buscar_Libre(eEmployee vec[], int size)
+{
+    int i;
+    int aux = -1;
+    for(i=0; i < size; i++)
+        {
+            if(vec[i].estado == 0)
+                {
+                    aux = i;
+                    break;
+                }
+
+
+        }
+
+
+    return aux;
+
 
 }
