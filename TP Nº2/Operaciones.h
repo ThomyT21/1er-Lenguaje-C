@@ -10,9 +10,11 @@ typedef struct                      //ESTRUCTURAS
 
 }eEmployee;
 
-int aLTA(eEmployee vec[], int size);    //PROTOTIPO DE UNA FUNCION. FUNCION ALTA 1)
-int iNicializar(eEmployee vec[], int size);
-int mostrar_1_Empleado(eEmployee empleado);
-int mostrar_Todos_Los_Empleados(eEmployee vec[], int size);
-int bAJA(eEmployee vec[], int size);
-int buscar_Por_Id(eEmployee vec[], int size, int id);
+int addEmployee(eEmployee vec[], int size);    //PROTOTIPO DE UNA FUNCION. FUNCION ALTA 1)
+int initEmployee(eEmployee vec[], int size);
+int printEmployee(eEmployee empleado);
+int printEmployees(eEmployee vec[], int size);
+int removeEmployee(eEmployee vec[], int size);
+int findEmployeeById(eEmployee vec[], int size, int id);
+int buscar_Libre(eEmployee vec [], int size);
+int comparacion(char letra1, char letra2);

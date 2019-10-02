@@ -1,35 +1,20 @@
 #include <stdio.h>
 #include <stdlib.h>
-#define TAM 2
+#define TAM 3
 #include <string.h>                 // AÑADE LA BIBLIOTECA DE STRINGS
 #include "Operaciones.h"
+                 // AÑADE LA BIBLIOTECA DE STRINGS
 
-typedef struct                      //ESTRUCTURAS
-{
-    int id;
-    char nombre[51];
-    char apellido[51];
-    float salario;
-    int sector;
-    int estado;
+//PROTOTIPO DE UNA FUNCION. FUNCION ALTA 1)
 
-
-}eEmployee;
-
-int aLTA(eEmployee vec[], int size);    //PROTOTIPO DE UNA FUNCION. FUNCION ALTA 1)
-int iNicializar(eEmployee vec[], int size);
-int mostrar_1_Empleado(eEmployee empleado);
-int mostrar_Todos_Los_Empleados(eEmployee vec[], int size);
-int bAJA(eEmployee vec[], int size);
-int buscar_Por_Id(eEmployee vec[], int size, int id);
 
 
 int main()
 {
-    eEmployee EmployeeLista[TAM] = {{001, "hernan", "gonzalez", 1000,2,4}, {002, "juan", "sosa", 10000, 1, 3}};
+    eEmployee EmployeeLista[TAM];
     char opcion;
 
-// iNicializar(EmployeeLista, TAM);           //LLAMAR A LA FUNCION
+    initEmployee(EmployeeLista, TAM);           //LLAMAR A LA FUNCION
         do
     {
         printf("Elija la operacion deseada: \n");
@@ -37,7 +22,7 @@ int main()
         printf("b) Ingrese datos de los empleados\n");
         printf("c) Dar de baja a un empleado\n");
         printf("d) Informar empleados ordenados alfabeticamente por apellido y sector\n");
-        printf("e) Calcular el factorial (A!)\n");
+        printf("e) ------");
         printf("s) SALIR \n");
         fflush(stdin);
         scanf("%c", &opcion);
@@ -47,16 +32,16 @@ int main()
         switch(opcion)
         {
 
-        case 'a' : mostrar_Todos_Los_Empleados(EmployeeLista, TAM);
+        case 'a' :  printEmployees(EmployeeLista, TAM);
 
 
             break;
 
-        case 'b' : aLTA(EmployeeLista, TAM);
+        case 'b' : addEmployee(EmployeeLista, TAM);
 
 
             break;
-        case 'c' : bAJA(EmployeeLista, TAM);
+        case 'c' : removeEmployee(EmployeeLista, TAM);
 
             break;
 
@@ -90,7 +75,7 @@ int main()
 
     return 0;
 }
-int aLTA(eEmployee vec[], int size)
+int addEmployee(eEmployee vec[], int size)
 {
     int i;
     for(i=0; i < size; i++)
@@ -124,7 +109,7 @@ int aLTA(eEmployee vec[], int size)
     return 0;
 
 }
-int iNicializar(eEmployee vec[], int size)
+int initEmployee(eEmployee vec[], int size)
 {
     int i;
     for(i=0; i < size; i++)
@@ -140,7 +125,7 @@ int iNicializar(eEmployee vec[], int size)
 
         return 0;
 }
-int mostrar_1_Empleado(eEmployee empleado)
+int printEmployee(eEmployee empleado)
 {
     if(empleado.estado != 0)
     printf("La id: %d nombre: %s Apellido: %s: salario: %.2f estado: %d sector: %d\n", empleado.id, empleado.nombre, empleado.apellido, empleado.salario, empleado.estado, empleado.sector);
@@ -149,29 +134,29 @@ int mostrar_1_Empleado(eEmployee empleado)
 
 
 
-int mostrar_Todos_Los_Empleados(eEmployee vec[], int size)
+int printEmployees(eEmployee vec[], int size)
 {
     int i;
     for(i=0; i < size; i++)
 
         {
-            mostrar_1_Empleado(vec[i]);
+            printEmployee(vec[i]);
 
         }
 
     return 0;
 
 }
-int bAJA(eEmployee vec[], int size)
+int removeEmployee(eEmployee vec[], int size)
 {
 
     int id;
     int direccion;
-    mostrar_Todos_Los_Empleados(vec, size);
+    printEmployees(vec, size);
     printf("Ingrese la id del empleado a dar de baja\n");
     fflush(stdin);
     scanf("%d",&id);
-    direccion = buscar_Por_Id(vec,size, id);        // CARGAR UNA VARIABLE
+    direccion = findEmployeeById(vec,size, id);        // CARGAR UNA VARIABLE
 
         if(direccion != -1)
             {
@@ -190,7 +175,7 @@ int bAJA(eEmployee vec[], int size)
 
 
 }
-int buscar_Por_Id(eEmployee vec[], int size, int id)
+int findEmployeeById(eEmployee vec[], int size, int id)
 {
     int i;
     int aux = -1;
@@ -224,3 +209,41 @@ int buscar_Libre(eEmployee vec[], int size)
 
 
 }
+int sorthEmployeeByName(eEmployee vec[], int size, int order)
+{
+    int i;
+    int j;
+
+    for(i=0; i < size -1; i++)
+        {
+            for(j=(i+1); j < size; j++)
+                {
+                    if(order == 1 && vec[i].estado == 1 && vec[j].estado == 1 && vec[i].comparacion)
+                        {
+
+
+
+                        }
+
+                }
+
+
+        }
+
+
+
+}
+int comparacion(char letra1, char letra2)
+{
+int retor;
+if(letra1 < letra2)
+    retor = -1;
+if(letra1 > letra2)
+    retor = 1;
+if(letra1 == letra2)
+    retor = 0;
+
+    return retor;
+}
+
+
