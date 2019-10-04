@@ -16,3 +16,17 @@
 
 1570029099 c:\users\alumno\desktop\1er-lenguaje-c-master\tp nº2\operaciones.h
 
+1570015198 source:c:\users\karina\desktop\1er-lenguaje-c-master\tp nº2\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Operaciones.h"
+
+1570229586 c:\users\karina\desktop\1er-lenguaje-c-master\tp nº2\operaciones.h
+
+1570015198 source:c:\users\karina\desktop\1er-lenguaje-c-master\tp nº2\operaciones.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Operaciones.h"
+

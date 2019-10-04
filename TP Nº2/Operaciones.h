@@ -18,3 +18,7 @@ int removeEmployee(eEmployee vec[], int size);
 int findEmployeeById(eEmployee vec[], int size, int id);
 int buscar_Libre(eEmployee vec [], int size);
 int comparacion(char letra1, char letra2);
+int modificar_Empleado(eEmployee vec[], int t,int id);
+int sorthEmployees(eEmployee* list, int len, int order);
+float salario_Total(eEmployee vec[], int t)
+float promedio(eEmployee vec[], int t);
