@@ -1,0 +1,241 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+typedef struct
+{
+    int id;
+    char nombre[20];
+    float sueldo;
+
+}eEmpleado;
+
+eEmpleado* newEmpleado();
+eEmpleado* newEmpleadoParam(int id, char* nombre, float sueldo);
+eEmpleado** agrandarLista(eEmpleado* vec, int tam);
+
+int set_Id_Empleado(eEmpleado* e, int id);
+int set_Sueldo_Empleado(eEmpleado* e, float sueldo);
+int set_Nombre_Empleado(eEmpleado* e, char* nombre);
+
+int get_Id_Empleado(eEmpleado* e, int* id);
+int get_sueldo_Empleado(eEmpleado* e, float* sueldo);
+int get_Nombre_Empleado(eEmpleado* e, char* nombre);
+
+int mostrar_Empleado(eEmpleado* e);
+int mostrar_Empleados(eEmpleado* e, int tam);
+
+int main()
+{
+    int tam = 0;
+    eEmpleado* auxEmpleado = NULL;
+    eEmpleado** lista = (eEmpleado**) malloc(sizeof(eEmpleado*));
+    int auxInt;
+    float auxFloat;
+    char auxCad = [100];
+
+    if(lista == NULL)
+        {
+            printf("No se pudo asignar memoria\n");
+            system("pause");
+            exit(EXIT_FAILURE);
+        }
+    auxEmpleado = newEmpleado();
+    if(auxEmpleado == NULL)
+        {
+            printf("No se pudo asignar memoria\n");
+            system("pause");
+            exit(EXIT_FAILURE);
+        }
+
+    printf("Ingrese id: ");
+    scanf("%d", &auxInt);
+
+    printf("Ingrese Nombre: ");
+    fflush(stdin);
+    gets(auxCad);
+
+    printf("Ingrese Sueldo: ");
+    scanf("%f", auxFloat);
+
+    auxEmpleado = newEmpleadoParam(auxInt, auxCad, auxFloat);
+    if(auxEmpleado == NULL)
+        {
+            printf("No se pudo crear el empleado\n");
+        }
+        else{
+                printf("Empleado creado con éxito");
+                *(lista + tam) = auxEmpleado;
+                tam++;
+            }
+
+        if(agrandarLista(lista,tam + 1)!= NULL)
+           {
+            printf("Empleado agregado a la lista");
+            tam++;
+           }
+
+    system("pause");
+
+    mostrar_Empleados(lista, tam);
+
+    return 0;
+}
+
+eEmpleado* newEmpleado()
+{
+    eEmpleado* nuevo = (eEmpleado) malloc(sizeof(eEmpleado));
+    if(nuevo != NULL)
+        {
+            (nuevo ->nombre, " ");
+            strcpy(nuevo->sueldo);
+            nuevo->sueldo = 0;
+
+        }
+return nuevo;
+
+}
+eEmpleado* newEmpleadoParam(int id, char* nombre, float sueldo)
+{
+    eEmpleado* nuevo = newEmpleado();
+    if(nuevo != NULL)
+        {
+            if(set_Id_Empleado(nuevo, id) &&
+               {
+                set_Nombre_Empleado(nuevo, nombre)&&
+                set_Sueldo_Empleado(nuevo, sueldo))
+               {
+                    printf("Empleado creado correctamente\n");
+               }
+
+               }
+        else
+            {
+
+            }
+
+        }
+return nuevo;
+}
+
+int set_Id_Empleado(eEmpleado* e, int id)
+{
+    int todoOk = 0;
+    if(e != NULL && id >= 10000 && id <= 20000)
+        {
+            e->id = id;
+            todoOk = 1;
+
+        }
+ return todoOk;
+
+}
+
+int set_Sueldo_Empleado(eEmpleado* e, float sueldo)
+{
+    int todoOk = 0;
+    if(e != NULL && sueldo >0)
+        {
+            e->sueldo = sueldo
+            todoOk = 1;
+
+        }
+ return todoOk;
+
+}
+
+int set_Nombre_Empleado(eEmpleado* e, char* nombre)
+{
+    int todoOk = 0;
+    if(e != NULL && nombre != NULL && strlen(nombre) < 20)
+        {
+            strcpy(e->nombre, nombre);
+            todoOk = 1;
+
+        }
+ return todoOk;
+
+}
+
+int get_Id_Empleado(eEmpleado* e, int* id)
+{
+    int todoOk = 0;
+
+    if(e != NULL && id != NULL)
+        {
+            *id = e->id;
+            todoOk = 1;
+        }
+    return todoOk;
+}
+
+int get_sueldo_Empleado(eEmpleado* e, float* sueldo)
+{
+    int todoOk = 0;
+    if(e != NULL && nombre != NULL)
+        {
+            strcpy(e->sueldo);
+            todoOk = 1;
+        }
+
+return todoOk;
+
+}
+
+
+int get_Nombre_Empleado(eEmpleado* e, char* nombre)
+{
+    int todoOk = 0;
+    if(e != NULL && nombre != NULL)
+        {
+            strcpy(e->nombre);
+            todoOk = 1;
+        }
+
+return todoOk;
+}
+int mostrar_Empleado(eEmpleado* e)
+{
+    int todoOk = 0;
+    if(e != NULL)
+        {
+            printf("%d %s %.2f\n", e->id, e->nombre, e->sueldo);
+            todoOk = 1;
+
+        }
+return todoOk;
+
+}
+int mostrar_Empleados(eEmpleado* e, int tam)
+{
+    int todoOk = 0;
+    if(e != NULL && tam > 0)
+        {
+            printf("Id   Nombre   Sueldo\n\n");
+            for(int i = 0; i < tam; i++)
+                {
+                    mostrar_Empleado(e + i);
+
+                }
+todoOk = 1;
+        }
+return todoOk;
+
+}
+
+eEmpleado** agrandarLista(eEmpleado* vec, int tam)
+{
+    eEmpleado** aux = (eEmpleado**) realloc(vec, sizeof(eEmpleado*)+ 1);
+    if( aux!= NULL)
+        {
+            vec = aux;
+        }
+
+return vec;
+
+}
+
+
+
+
+
