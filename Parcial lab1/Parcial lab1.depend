@@ -1,0 +1,93 @@
+# depslib dependency file v1.0
+1571232617 source:c:\users\alumno\desktop\parcial lab1\utn_auto.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	<ctype.h>
+	"prueba.h"
+	"utn_color.h"
+	"utn_marca.h"
+	"utn_auto.h"
+
+1571171245 c:\users\alumno\desktop\parcial lab1\prueba.h
+
+1571171670 c:\users\alumno\desktop\parcial lab1\utn_color.h
+
+1571171397 c:\users\alumno\desktop\parcial lab1\utn_marca.h
+
+1571232624 c:\users\alumno\desktop\parcial lab1\utn_auto.h
+
+1571191856 source:c:\users\alumno\desktop\parcial lab1\utn_color.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	<ctype.h>
+	"prueba.h"
+	"utn_color.h"
+	"utn_marca.h"
+	"utn_auto.h"
+	"utn_servicio.h"
+	"utn_trabajo.h"
+
+1571189499 c:\users\alumno\desktop\parcial lab1\utn_servicio.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	<ctype.h>
+
+1571171881 c:\users\alumno\desktop\parcial lab1\utn_trabajo.h
+
+1571192528 source:c:\users\alumno\desktop\parcial lab1\utn_marca.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	<ctype.h>
+	"prueba.h"
+	"utn_color.h"
+	"utn_marca.h"
+	"utn_auto.h"
+	"utn_servicio.h"
+	"utn_trabajo.h"
+
+1571192528 source:c:\users\alumno\desktop\parcial lab1\utn_servicio.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	<ctype.h>
+	"prueba.h"
+	"utn_color.h"
+	"utn_marca.h"
+	"utn_auto.h"
+	"utn_servicio.h"
+	"utn_trabajo.h"
+
+1571227946 source:c:\users\alumno\desktop\parcial lab1\utn_trabajo.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	<ctype.h>
+	"prueba.h"
+	"utn_color.h"
+	"utn_marca.h"
+	"utn_auto.h"
+	"utn_servicio.h"
+	"utn_trabajo.h"
+
+1571237683 source:c:\users\alumno\desktop\parcial lab1\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	<ctype.h>
+	"utn_color.h"
+	"utn_marca.h"
+	"utn_auto.h"
+	"utn_servicio.h"
+	"utn_trabajo.h"
+

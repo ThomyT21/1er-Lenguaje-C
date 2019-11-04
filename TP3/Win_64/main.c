@@ -4,6 +4,15 @@
 #include "Controller.h"
 #include "Employee.h"
 
+typedef struct
+{
+    int id;
+    char nombre[128];
+    int horasTrabajadas;
+    int sueldo;
+
+}eEmployee;
+
 /****************************************************
     Menu:
      1. Cargar los datos de los empleados desde el archivo data.csv (modo texto).
@@ -21,7 +30,8 @@
 
 int main()
 {
-    int option = 0;
+
+    int option = 10;
     LinkedList* listaEmpleados = ll_newLinkedList();
     do{
         switch(option)

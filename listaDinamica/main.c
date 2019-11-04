@@ -7,17 +7,26 @@ typedef struct
     int id;
     char nombre[20];
     float sueldo;
-} eEmpleado;
+}eEmpleado;
 
 eEmpleado* newEmpleadoParam( int id, char* nombre, float sueldo);
 eEmpleado** agrandarLista(eEmpleado** vec, int tam);
+
 int setIdEmpleado(eEmpleado* e, int id);
 int setNombreEmpleado(eEmpleado* e, char* nombre);
 int setSueldoEmpleado(eEmpleado* e, float sueldo);
+
 int mostrarEmpleado( eEmpleado* e);
 int mostrarEmpleados( eEmpleado** e, int tam);
+
+int getIdEmpleado(eEmpleado* e, int* id);
+int getSueldoEmpleado(eEmpleado* e, float* sueldo);
+int getNombreEmpleado(eEmpleado* e, char* nombre);
+
 int guardarEmpleadosBinario(eEmpleado** lista, int tam, char* path);
-eEmpleado** leerEmpleadosBinario()
+int guardarEmpleadosCSV(eEmpleado**, lista, int tam, char* path);
+
+eEmpleado** leerEmpleadosBinario(eEmpleado** lista, int tam, char*);
 
 
 int main()
@@ -192,14 +201,7 @@ int main()
 
         }
 
-
-
-
-
-
-
-
-    return 0;
+return 0;
 }
 
 eEmpleado* newEmpleado()
@@ -396,7 +398,6 @@ int guardarEmpleadosCSV(eEmpleado**, lista, int tam, char* path)
         todoOk = 1;
 
         }
-
 
 return todoOk;
 
