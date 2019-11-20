@@ -60,23 +60,16 @@ static Node* getNode(LinkedList* this, int nodeIndex)
     Node* actual = NULL;
     Node* next = NULL;
 
+
     if(this != NULL && nodeIndex >= 0 && nodeIndex < ll_len(this))
         {
             actual = this->pFirstNode;
-            if(nodeIndex != 0)
+
+
+            for(int i= 0; nodeIndex < ll_len(this); i++)
                 {
-                    while(actual->pNextNode != NULL)
-                        {
-                            actual = next->pNextNode;
-                            nodeIndex--;
-                            if(nodeIndex < 0)
-                                {
-                                    break;
-                                }
-                        }
+                    actual = next->pNextNode;
                 }
-
-
 
         }
 
@@ -165,6 +158,13 @@ int test_addNode(LinkedList* this, int nodeIndex,void* pElement)
 int ll_add(LinkedList* this, void* pElement)
 {
     int returnAux = -1;
+    if(this != NULL)
+        {
+            if(addNode(this, ll_len(this), pElement) == 0)
+                {
+                    returnAux = 0;
+                }
+        }
 
     return returnAux;
 }
@@ -180,6 +180,11 @@ int ll_add(LinkedList* this, void* pElement)
 void* ll_get(LinkedList* this, int index)
 {
     void* returnAux = NULL;
+
+    if(this != NULL && index >= 0 && index < ll_len(this))
+        {
+            returnAux = getNode(this, index)->pElement;
+        }
 
     return returnAux;
 }
